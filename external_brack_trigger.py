@@ -28,7 +28,6 @@ def get_next_offer_time():
 def trigger_dag():
     response = requests.post(
         f'http://{AIRFLOW_HOST}/api/v1/dags/brack/dagRuns',
-        # headers={'Authorization': 'Bearer 4p1oIEc64K5NZ8/1L4qC3A=='},
         auth=HTTPBasicAuth(AIRFLOW_USERNAME, AIRFLOW_PASSWORD),
         json={
             'conf': {}  # Optional configuration for the DAG run
